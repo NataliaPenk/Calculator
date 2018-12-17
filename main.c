@@ -4,7 +4,8 @@
 
 
 
-int ReadingCorrectNumbers(int number, char number_str[]) {
+int ReadingCorrectNumbers(char number_str[]) {
+    int number = 0;
     printf("%s\n", number_str);
     int scanf_result = scanf("%d", &number);
     if (!scanf_result) {
@@ -15,22 +16,23 @@ int ReadingCorrectNumbers(int number, char number_str[]) {
     return number;
 }
 
-char ReadingCorrectOperation(char operation) {
+char ReadingCorrectOperation() {
+    char tmp_operation;
     printf("Operation\n");
-    scanf("\n%c", &operation);
-    if (strchr("+-*/", operation) == NULL) {
+    scanf("\n%c", &tmp_operation);
+    if (strchr("+-*/", tmp_operation) == NULL) {
         printf("ERROR:Invalid data\n");
         _Exit (EXIT_SUCCESS);
     }
-    return operation;
+    return tmp_operation;
 }
 
 int main() {
     char first_number_str[13] = "First number";
     char second_number_str[14] = "Second number";
-    int first_number = ReadingCorrectNumbers(first_number, first_number_str);
-    int second_number = ReadingCorrectNumbers(second_number, second_number_str);
-    char operation = ReadingCorrectOperation(operation);
+    int first_number = ReadingCorrectNumbers(first_number_str);
+    int second_number = ReadingCorrectNumbers(second_number_str);
+    char operation = ReadingCorrectOperation();
     int result = 0;
     switch (operation) {
         case '+':
