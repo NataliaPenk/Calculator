@@ -32,9 +32,6 @@ int main() {
     int second_number = ReadingCorrectNumbers(second_number, second_number_str);
     char operation = ReadingCorrectOperation(operation);
     int result = 0;
-    printf("%c\n", operation);
-    printf("%d\n", first_number);
-    printf("%d\n", second_number);
     switch (operation) {
         case '+':
             result = first_number + second_number;
